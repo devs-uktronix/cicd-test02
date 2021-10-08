@@ -1,6 +1,9 @@
 - name: MariaDB installation
   hosts: mariadbs
-  become: yes
+  become: true
+  become_user: redwan
+  become_method: sudo
+  
   tasks:
     # - name: enable and start firewalld service
     #   systemd:
