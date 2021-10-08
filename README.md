@@ -1,0 +1,1 @@
+# simple jenkins ansible integration
