@@ -23,20 +23,26 @@
     #     state: enabled
     #     immediate: yes
       - name: Install MariaDB repository 10.3
+        become_user: redwan
         apt_repository: repo='deb [arch=amd64] http://mirror.zol.co.zw/mariadb/repo/10.3/ubuntu xenial main' state=present
     
       - name: Add repository key to the system
+        become_user: redwan
         apt_key: keyserver=hkp://keyserver.ubuntu.com:80 id=0xF1656F24C74CD1D8
 
       - name: update
+        become_user: redwan
         apt: update_cache=yes   
         ignore_errors: yes      
 
       - name: Install MariaDB Server 10.3
         apt: name=mariadb-server state=latest
+        become_user: redwan
         
       - name: Install MariaDB Client 10.3
+        become_user: redwan
         apt: name=mariadb-client state=latest
 
       - name: Restart MariaDB 10.3
+        become_user: redwan
         service: name=mysql state=restarted
