@@ -1,7 +1,0 @@
-[all:vars]
-ansible_ssh_common_args='-o StrictHostKeyChecking=no'
-host_key_checking=False
-
-[mariadbs]
-10.10.10.11 ansible_user=redwan
-# mariadb ansible_ssh_host=10.10.10.11 ansible_ssh_port=22 ansible_user=redwan
